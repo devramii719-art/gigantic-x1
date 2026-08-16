@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>GIGANTIC AI - التسعيرة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        body { font-family: 'Tajawal', sans-serif; background: #0b131b; color: #fff; text-align: center; padding: 50px; }
+        .box { display: inline-block; background: #121c24; border: 1px solid rgba(255,255,255,0.1); padding: 30px; margin: 15px; border-radius: 12px; width: 280px; vertical-align: top; text-align: right; }
+        .box h3 { color: #00d2ff; font-size: 24px; margin-bottom: 10px; }
+        .price { font-size: 30px; font-weight: bold; color: #38ef7d; margin-bottom: 20px; }
+        .btn { display: block; width: 100%; padding: 12px; background: #00d2ff; color: #000; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; text-decoration: none; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: #00d2ff; margin-bottom: 40px;">نظام التسعيرة الرسمي</h1>
+
+    <!-- خطة Trial -->
+    <div class="box">
+        <h3>Trial</h3>
+        <div class="price">مجاناً</div>
+        <p>200 إيميل مخصصة للتجربة والاستكشاف.</p>
+        <a href="/payment?plan=trial" class="btn">اختر التجريبي</a>
+    </div>
+
+    <!-- خطة Pro -->
+    <div class="box" style="border-color: #00d2ff;">
+        <h3>Pro</h3>
+        <div class="price">79$</div>
+        <p>محرك صائد الليدات وكتابة الإيميلات بالـ AI.</p>
+        <a href="/payment?plan=pro" class="btn" style="background: linear-gradient(to right, #3a7bd5, #00d2ff); color: #fff;">اختر Pro</a>
+    </div>
+
+    <!-- خطة Agency -->
+    <div class="box">
+        <h3>Agency</h3>
+        <div class="price">250$</div>
+        <p>صلاحيات كاملة للوكالات وعدد غير محدود.</p>
+        <a href="/payment?plan=agency" class="btn" style="background: linear-gradient(to right, #f2994a, #f2c94c);">اختر Agency</a>
+    </div>
+
+</body>
+</html>

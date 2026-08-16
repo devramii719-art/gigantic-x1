@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>GIGANTIC AI - Secure Checkout</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        body { font-family: 'Tajawal', sans-serif; background: #0b131b; color: #fff; text-align: center; padding: 50px; }
+        .payment-box { display: inline-block; background: #121c24; border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; width: 350px; text-align: right; }
+        .payment-box h2 { color: #00d2ff; margin-bottom: 20px; text-align: center; }
+        .method-label { display: block; background: rgba(255,255,255,0.05); padding: 12px; margin: 10px 0; border-radius: 8px; cursor: pointer; border: 1px solid transparent; }
+        .method-label:hover { border-color: #00d2ff; }
+        .btn-pay { display: block; width: 100%; padding: 14px; background: linear-gradient(to right, #3a7bd5, #00d2ff); color: #fff; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <div class="payment-box">
+        <h2>Secure Checkout 🔒</h2>
+        <p>Selected Plan: <strong>{{ plan.name }}</strong></p>
+        <p>Amount: <span style="color: #38ef7d; font-size: 20px; font-weight: bold;">{{ plan.amount }}</span></p>
+
+        <form action="/process-payment" method="POST">
+            <input type="hidden" name="plan" value="{{ plan.name }}">
+            
+            <p style="margin-top: 20px; font-weight: bold;">Choose Cryptomus Payment Method:</p>
+            
+            <label class="method-label">
+                <input type="radio" name="method" value="crypto" checked> Cryptocurrency (USDT / BTC) ⚡
+            </label>
+            <label class="method-label">
+                <input type="radio" name="method" value="card"> Credit Card (Visa / Mastercard) 💳
+            </label>
+
+            <button type="submit" class="btn-pay">Pay Securely Now</button>
+        </form>
+    </div>
+
+</body>
+</html>

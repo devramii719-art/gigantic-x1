@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>لوحة التحكم | GIGANTIC V2</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
 </head>
-<body class="bg-slate-950 text-white p-8">
-    <h1 class="text-3xl font-bold text-cyan-400 mb-8 text-center">لوحة التحكم الرئيسية 📊</h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center">
-            <h3 class="text-slate-400 mb-2">الليدات المستخرجة</h3>
-            <p class="text-3xl font-bold text-cyan-400">0 / 200</p>
-        </div>
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center">
-            <h3 class="text-slate-400 mb-2">الإيميلات المرسلة</h3>
-            <p class="text-3xl font-bold text-emerald-400">0 / 200</p>
-        </div>
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center">
-            <h3 class="text-slate-400 mb-2">الحالة</h3>
-            <p class="text-3xl font-bold text-indigo-400">نشط 🟢</p>
-        </div>
+<body>
+    <div class="interface-card">
+        <h1>GIGANTIC AI</h1>
+        <!-- عداد الدراهم -->
+        <div class="revenue-box" id="liveRevenue">$18,450</div>
+        
+        <!-- استدعاء الأزرار كملف مستقل -->
+        {% include 'components/buttons.html' %}
     </div>
-    <div class="text-center mt-8">
-        <a href="/" class="text-cyan-400 underline">العودة للرئيسية</a>
-    </div>
+    <script src="{{ url_for('static', filename='js/dashboard/revenue.js') }}"></script>
 </body>
 </html>
