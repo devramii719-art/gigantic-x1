@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 
-interface_bp = Blueprint('interface', __name__)
+routes_bp = Blueprint('routes', __name__)
 
-@interface_bp.route('/dashboard')
-def dashboard():
-    return render_template('interface_main.html')
+@routes_bp.route('/dashboard')
+def show_dashboard():
+    return render_template('dashboard/main.html')
