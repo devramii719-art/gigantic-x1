@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
@@ -9,20 +9,7 @@ def home():
 
 @app.route('/pricing')
 def pricing():
-    return """
-    <html><body style="background:#0a0a0a;color:#00ff88;text-align:center;font-family:Arial">
-    <h1>Choose Your Plan</h1>
-    <div style="border:2px solid #00ff88;border-radius:20px;padding:30px;margin:20px;display:inline-block">
-        <h2>TRIAL</h2><h3>$0</h3><p>200 Emails</p>
-    </div>
-    <div style="border:2px solid #00ff88;border-radius:20px;padding:30px;margin:20px;display:inline-block">
-        <h2>PRO</h2><h3>$79</h3><p>5000 Emails</p>
-    </div>
-    <div style="border:2px solid #00ff88;border-radius:20px;padding:30px;margin:20px;display:inline-block">
-        <h2>AGENCY</h2><h3>$250</h3><p>Unlimited</p>
-    </div>
-    </body></html>
-    """
+    return render_template('pricing.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

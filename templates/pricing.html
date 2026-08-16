@@ -1,7 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head><meta charset="UTF-8"><title>Pricing</title>
-<style>body{background:#0a0a0a;color:#fff;text-align:center;font-family:Arial}.plan{background:#1a1a1a;border:2px solid #00ff88;border-radius:20px;padding:30px;margin:20px;display:inline-block;width:300px}.price{font-size:48px;color:#00ff88}.btn{background:#00ff88;color:#000;padding:15px 40px;border-radius:10px;text-decoration:none;font-weight:bold}</style>
+<html>
+<head>
+    <title>GIGANTIC AI - Pricing</title>
+    <style>
+        body{background:#0a0a0a;color:#fff;text-align:center;font-family:Arial;padding:50px}
+        .plan{background:#1a1a1a;border:2px solid #00ff88;border-radius:20px;padding:30px;margin:20px;display:inline-block;width:300px}
+        .price{font-size:48px;color:#00ff88;font-weight:bold}
+        .btn{background:#00ff88;color:#000;padding:15px 40px;border-radius:10px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:20px}
+    </style>
 </head>
-<body><h1>Choose Your Plan</h1>
-{% for plan in plans %}<div class="plan"><h2>{{ plan.name }}</h2><div class="price">${{ plan.price }} <span style="font-size:20px">{{ plan.currency }}</span></div><p>{{ plan.emails }}</p><a href="/register?plan={{ plan.name }}" class="btn">Start Now</a></div>{% endfor %}</body></html>
+<body>
+    <h1>Choose Your Plan</h1>
+    
+    <div class="plan">
+        <h2>TRIAL</h2>
+        <div class="price">$0</div>
+        <p>200 Emails / Month</p>
+        <a href="#" class="btn">Start Free</a>
+    </div>
+
+    <div class="plan">
+        <h2>PRO</h2>
+        <div class="price">$79</div>
+        <p>5000 Emails / Month</p>
+        <a href="#" class="btn">Get Started</a>
+    </div>
+
+    <div class="plan">
+        <h2>AGENCY</h2>
+        <div class="price">$250</div>
+        <p>Unlimited Emails</p>
+        <a href="#" class="btn">Scale Now</a>
+    </div>
+</body>
+</html>
