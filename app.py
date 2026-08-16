@@ -1,15 +1,12 @@
-from flask import Flask, render_template
-from routes import routes_bp  # الاستيراد المباشر من ملف routes.py تاعك
+from flask import Flask
+from routes.pricing import pricing_bp
+from routes.register import register_bp
+from routes.webhook import webhook_bp  # زيد هذا
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'gigantic-secret-key-2026'
-
-# تسجيل الـ Blueprint
-app.register_blueprint(routes_bp)
-
-@app.route('/')
-def index():
-    return render_template('dashboard/main.html')
+app.register_blueprint(pricing_bp)
+app.register_blueprint(register_bp)
+app.register_blueprint(webhook_bp)  # وزيد هذا
 
 if __name__ == '__main__':
     app.run(debug=True)
