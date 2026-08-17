@@ -2,15 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تسجيل الدخول | GIGANTIC V2</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>GIGANTIC AI - تسجيل الدخول</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="bg-slate-950 text-white flex items-center justify-center h-screen">
-    <div class="w-full max-w-md bg-slate-900 border border-slate-800 p-8 rounded-xl shadow-2xl">
-        <h2 class="text-2xl font-bold text-cyan-400 mb-6 text-center">تسجيل الدخول 🔐</h2>
-        <input type="email" placeholder="البريد الإلكتروني" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-lg mb-4 text-white focus:outline-none focus:border-cyan-500">
-        <input type="password" placeholder="كلمة المرور" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-lg mb-6 text-white focus:outline-none focus:border-cyan-500">
-        <button onclick="alert('تم تسجيل الدخول بنجاح!')" class="w-full py-3 bg-cyan-600 hover:bg-cyan-500 rounded-lg font-bold transition">دخول</button>
+<body>
+    <div class="interface-card">
+        <h1>🔐 تسجيل الدخول</h1>
+        <p>أدخل بيانات حسابك للمتابعة</p>
+        <a href="/" class="btn-back">← العودة للرئيسية</a>
     </div>
 </body>
 </html>

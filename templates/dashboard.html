@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/style.css') }}">
+    <meta charset="UTF-8">
+    <title>GIGANTIC AI - لوحة التحكم</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="interface-card">
-        <h1>GIGANTIC AI</h1>
-        <!-- عداد الدراهم -->
-        <div class="revenue-box" id="liveRevenue">$18,450</div>
-        
-        <!-- استدعاء الأزرار كملف مستقل -->
-        {% include 'components/buttons.html' %}
+        <h1>📊 لوحة التحكم الرئيسية</h1>
+        <div style="background: rgba(0,210,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <div style="color: #38ef7d; font-size: 28px; font-weight: bold;">$18,450</div>
+            <p style="margin: 0;">الإيرادات اللحظية</p>
+        </div>
+        <a href="/" class="btn-back">← العودة للرئيسية</a>
     </div>
-    <script src="{{ url_for('static', filename='js/dashboard/revenue.js') }}"></script>
 </body>
 </html>

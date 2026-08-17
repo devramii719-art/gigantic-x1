@@ -1,24 +1,30 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 
 payment_bp = Blueprint('payment', __name__)
 
-@payment_bp.route('/payment')
-def payment_page():
-    selected_plan = request.args.get('plan', 'trial')
-    
-    # الأسعار بالدولار فقط
-    prices = {
-        'trial': {'name': 'Trial (تجريبي)', 'amount': '$0'},
-        'pro': {'name': 'Pro (محترف)', 'amount': '$79'},
-        'agency': {'name': 'Agency (وكالة)', 'amount': '$250'}
-    }
-    
-    plan_info = prices.get(selected_plan, prices['trial'])
-    
-    return render_template('payment.html', plan=plan_info)
+@payment_bp.route('/settings', methods=['GET', 'POST'])
+def settings_view():
+    if request.method == 'POST':
+        # استقبال طلب إنشاء فاتورة دفع جديدة عبر Cryptomus
+        plan_type = request.form.get('plan', 'pro')
+        
+        # محاكاة رابط الدفع الوهمي (سيتم ربطه بـ API الحقيقي لـ Cryptomus لاحقاً)
+        fake_payment_url = "https://pay.cryptomus.com/pay/sandbox-gigantic-invoice-123"
+        
+        return jsonify({
+            "status": "success",
+            "payment_url": fake_payment_url,
+            "message": f"تم إنشاء رابط الدفع لباقة {plan_type} بنجاح!"
+        })
+        
+    return render_template('settings.html')
 
-@payment_bp.route('/process-payment', methods=['POST'])
-def process_payment():
-    payment_method = request.form.get('method')
-    plan_name = request.form.get('plan')
-    return f"Redirecting to Cryptomus payment gateway for plan: {plan_name} via {payment_method} 🚀"
+@payment_bp.route('/payment/webhook', methods=['POST'])
+def payment_webhook():
+    # هذا المسار يستقبل الإشعار أوتوماتيكياً من Cryptomus كي يخلص العملاء
+    webhook_data = request.json
+    if webhook_data and webhook_data.get('status') == 'paid':
+        # هنا يتم ترقية حساب المستخدم في قاعدة البيانات تلقائياً
+        return jsonify({"status": "received", "action": "account_upgraded"})
+        
+    return jsonify({"status": "ignored"}), 400

@@ -1,6 +1,36 @@
-/* Dark Mode */
-body { background-color: #0b131b; color: #fff; }
-.interface-card { background: #121c24; padding: 40px; border-radius: 20px; }
-.revenue-box { color: #38ef7d; font-size: 32px; font-weight: bold; }
-.buttons-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.btn-full { grid-column: span 2; background: #38ef7d; color: #000; }
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #0b131b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.interface-card {
+    background: #121c24;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+h1 { color: #00d2ff; font-size: 28px; margin-bottom: 25px; }
+p { color: #a0aec0; margin-bottom: 20px; font-size: 16px; }
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-back:hover { background: #00d2ff; color: #0b131b; }
