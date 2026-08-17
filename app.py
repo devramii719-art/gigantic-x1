@@ -4,12 +4,12 @@ import os
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
-# استدعاء الـ blueprints
-from routes.auth import bp as auth_bp
+# استدعاء الـ blueprints بالاسم الصحيح
+from routes.auth import auth_bp
 from routes.dashboard import bp as dashboard_bp
-from routes.leads import bp as leads_bp
-from routes.send import bp as send_bp
-from routes.payment import bp as payment_bp
+from routes.leads import leads_bp
+from routes.send import send_bp
+from routes.payment import payment_bp
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(dashboard_bp)
