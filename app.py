@@ -1,18 +1,21 @@
 from flask import Flask, render_template
 import os
 
-# باش يقرا من routes
-from routes import auth, dashboard, leads, send, payment 
-
 app = Flask(__name__, template_folder='templates', static_folder='static')
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
-# سجل كل الـ blueprints
-app.register_blueprint(auth.bp)
-app.register_blueprint(dashboard.bp) 
-app.register_blueprint(leads.bp)
-app.register_blueprint(send.bp)
-app.register_blueprint(payment.bp)
+# استدعاء الـ blueprints
+from routes.auth import bp as auth_bp
+from routes.dashboard import bp as dashboard_bp
+from routes.leads import bp as leads_bp
+from routes.send import bp as send_bp
+from routes.payment import bp as payment_bp
+
+app.register_blueprint(auth_bp)
+app.register_blueprint(dashboard_bp)
+app.register_blueprint(leads_bp)
+app.register_blueprint(send_bp)
+app.register_blueprint(payment_bp)
 
 @app.route('/')
 def home():
